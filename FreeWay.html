@@ -1,0 +1,299 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    function background (){
+        pincel.fillStyle = 'grey';
+        pincel.fillRect(0, 0, 600, 400);
+        pincel.fillStyle = 'yellow';
+        pincel.fillRect(0, 190, 600, 5);
+        pincel.fillRect(0, 210, 600, 5);
+        pincel.fillStyle = 'white';
+        pincel.fillRect(0, 30, 600, 5);
+        pincel.fillRect(0, 60, 600, 5);
+        pincel.fillRect(0, 90, 600, 5);
+        pincel.fillRect(0, 120, 600, 5);
+        pincel.fillRect(0, 150, 600, 5);
+        pincel.fillRect(0, 250, 600, 5);
+        pincel.fillRect(0, 280, 600, 5);
+        pincel.fillRect(0, 310, 600, 5);
+        pincel.fillRect(0, 340, 600, 5);
+        pincel.fillRect(0, 370, 600, 5);
+    }
+    //Squares
+    let xS1 = 640;
+    let yS1 = 38;
+    let wS1 = 40;
+    let hS1 = 20;
+    function drawSquare1(){
+        pincel.fillStyle = 'white';
+        pincel.fillRect(xS1, yS1, wS1, hS1);
+        if(xS1 > -40){
+            xS1 = xS1 - 5;
+        }else{
+            xS1 = 640;
+        }
+        }
+    let xS2 = 640;
+    let yS2 = 68;
+    let wS2 = 40;
+    let hS2 = 20;
+    function drawSquare2(){
+        pincel.fillStyle = 'black';
+        pincel.fillRect(xS2, yS2, wS2, hS2);
+        if(xS2 > -40){
+            xS2 = xS2 - 6;
+        }else{
+            xS2 = 640;
+        }
+        }
+    let xS3 = 640;
+    let yS3 = 98;
+    let wS3 = 40;
+    let hS3 = 20;
+    function drawSquare3(){
+        pincel.fillStyle = 'red';
+        pincel.fillRect(xS3, yS3, wS3, hS3);
+        if(xS3 > -40){
+            xS3 = xS3 - 7;
+        }else{
+            xS3 = 640;
+        }
+        }
+    let xS4 = 640;
+    let yS4 = 128;
+    let wS4 = 40;
+    let hS4 = 20;
+    function drawSquare4(){
+        pincel.fillStyle = 'blue';
+        pincel.fillRect(xS4, yS4, wS4, hS4);
+        if(xS4 > -40){
+            xS4 = xS4 - 8;
+        }else{
+            xS4 = 640;
+        }
+        }
+    let xS5 = 640;
+    let yS5 = 158;
+    let wS5 = 40;
+    let hS5 = 20;
+    function drawSquare5(){
+        pincel.fillStyle = 'orange';
+        pincel.fillRect(xS5, yS5, wS5, hS5);
+        if(xS5 > -40){
+            xS5 = xS5 - 9;
+        }else{
+            xS5 = 640;
+        }
+        }
+    let xS6 = -40;
+    let yS6 = 228;
+    let wS6 = 40;
+    let hS6 = 20;
+    function drawSquare6(){
+        pincel.fillStyle = 'blue';
+        pincel.fillRect(xS6, yS6, wS6, hS6);
+        if(xS6 < 620){
+            xS6 = xS6 + 9;
+        }else{
+            xS6 = -40;
+        }
+        }
+    let xS7 = -40;
+    let yS7 = 258;
+    let wS7 = 40;
+    let hS7 = 20;
+    function drawSquare7(){
+        pincel.fillStyle = 'orange';
+        pincel.fillRect(xS7, yS7, wS7, hS7);
+        if(xS7 < 620){
+            xS7 = xS7 + 8;
+        }else{
+            xS7 = -40;
+        }
+        }
+    let xS8 = -40
+    let yS8 = 288;
+    let wS8 = 40;
+    let hS8 = 20;
+    function drawSquare8(){
+        pincel.fillStyle = 'red';
+        pincel.fillRect(xS8, yS8, wS8, hS8);
+        if(xS6 < 620){
+            xS8 = xS8 + 7;
+        }else{
+            xS8 = -40;
+        }
+        }
+    let xS9 = -40;
+    let yS9 = 318;
+    let wS9 = 40;
+    let hS9 = 20;
+    function drawSquare9(){
+        pincel.fillStyle = 'black';
+        pincel.fillRect(xS9, yS9, wS9, hS9);
+        if(xS9 < 620){
+            xS9 = xS9 + 6;
+        }else{
+            xS9 = -40;
+        }
+        }
+    let xS10 = -40;
+    let yS10 = 348;
+    let wS10 = 40;
+    let hS10 = 20;
+    function drawSquare10(){
+        pincel.fillStyle = 'white';
+        pincel.fillRect(xS10, yS10, wS10, hS10);
+        if(xS10 < 620){
+            xS10 = xS10 + 5;
+        }else{
+            xS10 = -40;
+        }
+        }
+    //Player 
+    let xP = 295;
+    let yP = 378;
+    let wP = 20;
+    let hP = 20;
+    let up = 38;
+    let down = 40;
+    let right = 39;
+    let left = 37;
+    function player(){
+        pincel.fillStyle = 'yellow';
+        pincel.fillRect(xP, yP, wP, hP);
+    }
+    function movePlayer(event){
+        player();
+        if(event.keyCode == up ){
+            yP = yP - 10
+        } else if (event.keyCode == down){
+            yP = yP + 10
+        } else if (event.keyCode == right){
+            xP = xP + 10
+        } else if (event.keyCode == left){
+            xP = xP - 10
+        }
+    }
+    let points = 0
+    function score(){
+        pincel.font = "25px Arial";
+		pincel.fillStyle = 'white';
+		pincel.fillText(points, 380, 25);
+        if(yP <= 0){
+            points = points + 1;
+            xP = 295;
+            yP = 378;
+            alert ("Você marcou um ponto!");
+        }if (points == 10 ){
+            points = 0
+            xP = 295;
+            yP = 378;
+            alert("Você venceu!");
+        }
+    }
+    function detectCollision(){
+        if (xP < xS1 + wS1 &&
+        (xP + wP) - 15 > xS1 &&
+        yP < yS1 + hS1 &&
+        yP + hP > yS1){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+        if (xP < xS2 + wS2 &&
+        (xP + wP) - 15 > xS2 &&
+        yP < yS2 + hS2 &&
+        yP + hP > yS2){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+        if (xP < xS3 + wS3 &&
+        (xP + wP) - 15 > xS3 &&
+        yP < yS3 + hS3 &&
+        yP + hP > yS3){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+        if (xP < xS4 + wS4 &&
+        (xP + wP) - 15 > xS4 &&
+        yP < yS4 + hS4 &&
+        yP + hP > yS4){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+        if (xP < xS5 + wS5 &&
+        (xP - wP) + 20> xS5 &&
+        yP < yS5 + hS5 &&
+        yP + hP > yS5){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+        if (xP < (xS6 + wS6)-15 &&
+        xP + wP > xS6 &&
+        yP < yS6 + hS6 &&
+        yP + hP > yS6){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+        if (xP < (xS7 + wS7)-10 &&
+        xP + wP > xS7 &&
+        yP < yS7 + hS7 &&
+        yP + hP > yS7){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+            if (xP < (xS8 + wS8)-10 &&
+        xP + wP > xS8 &&
+        yP < yS8 + hS8 &&
+        yP + hP > yS8){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+        if (xP < (xS9 + wS9)-10 &&
+        xP + wP > xS9 &&
+        yP < yS9 + hS9 &&
+        yP + hP > yS9){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+        if (xP < (xS10 + wS10)-10 &&
+        xP + wP > xS10 &&
+        yP < yS10 + hS10 &&
+        yP + hP > yS10){
+            alert("Colisão!");
+            xP = 295;
+            yP = 378;
+        }
+    }
+    function draw(){
+        background();
+        drawSquare1();
+        drawSquare2();
+        drawSquare3();
+        drawSquare4();
+        drawSquare5();
+        drawSquare6();
+        drawSquare7();
+        drawSquare8();
+        drawSquare9();
+        drawSquare10();
+        player();
+        detectCollision();
+        score();
+    }
+    document.onkeydown = movePlayer;
+    setInterval(draw, 20);
+</script>
